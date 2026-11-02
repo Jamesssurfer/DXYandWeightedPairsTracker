@@ -17,7 +17,8 @@
 </head>
 <body>
     <div class="nav-bar">
-        <button class="nav-btn active" id="btn-DXY"
+        <button class="nav-btn active" id="btn-SUMMARY" onclick="showTab('SUMMARY')">Summary</button>
+        <button class="nav-btn" id="btn-DXY"
                 onclick="showTab('DXY')">DXY</button>
         <button class="nav-btn" id="btn-EURUSD"
                 onclick="showTab('EURUSD')">EUR/USD</button>
@@ -36,7 +37,249 @@
         <button class="nav-btn" id="btn-NZDUSD"
                 onclick="showTab('NZDUSD')">NZDUSD</button></div>
     <div class="content">
-    <div id="tab-DXY" class="tab-section" style="display:block;">
+    <div id="tab-SUMMARY" class="tab-section" style="display:block;">
+        <h2 style="font-size:20px;font-weight:600;margin-bottom:4px;border-bottom:1px solid #e9e9e6;padding-bottom:8px;">
+            Summary: Volatility &amp; Trend Ranking
+        </h2>
+        <div style="font-size:12px;color:#6b6a65;margin-bottom:14px;">Completed sessions only. As of the 2026-10-30 close (broker day).</div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;">
+        <div style="flex:1 1 380px;min-width:0;">
+            <h3 style="font-size:15px;font-weight:600;margin:0 0 6px;">ADX(14) trend strength</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead>
+                    <tr style="border-bottom:2px solid #e9e9e6;color:#6b6a65;font-weight:500;">
+                        <th style="padding:6px 8px;text-align:left;">#</th>
+                        <th style="padding:6px 8px;text-align:left;">Asset</th>
+                        <th style="padding:6px 8px;text-align:right;">Value</th>
+                        <th style="padding:6px 8px;text-align:center;">State</th>
+                        <th style="padding:6px 8px;text-align:left;">vs 3 sessions ago</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">1</td>
+                <td style="padding:6px 8px;font-weight:600;">EUR/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">47.5</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#ddd6fe;color:#4c1d95;font-size:12px;font-weight:600;">STRONG TREND</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#6b6a65;font-weight:600;">&#9644; flat</span> <span style="color:#6b6a65;">(-1.0)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">2</td>
+                <td style="padding:6px 8px;font-weight:600;">NZDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">36.9</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#ede9fe;color:#5b21b6;font-size:12px;font-weight:600;">TRENDING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+1.1)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">3</td>
+                <td style="padding:6px 8px;font-weight:600;">DXY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">32.1</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#ede9fe;color:#5b21b6;font-size:12px;font-weight:600;">TRENDING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-2.5)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">4</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CAD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">30.9</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#ede9fe;color:#5b21b6;font-size:12px;font-weight:600;">TRENDING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#6b6a65;font-weight:600;">&#9644; flat</span> <span style="color:#6b6a65;">(-0.3)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">5</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/SEK</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">28.5</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#ede9fe;color:#5b21b6;font-size:12px;font-weight:600;">TRENDING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-4.8)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">6</td>
+                <td style="padding:6px 8px;font-weight:600;">AUDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">21.8</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#fef9c3;color:#a16207;font-size:12px;font-weight:600;">DEVELOPING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-5.0)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">7</td>
+                <td style="padding:6px 8px;font-weight:600;">GBP/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">20.8</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#fef9c3;color:#a16207;font-size:12px;font-weight:600;">DEVELOPING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-2.6)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">8</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CHF</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">15.3</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NO TREND</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#6b6a65;font-weight:600;">&#9644; flat</span> <span style="color:#6b6a65;">(-1.0)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">9</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/JPY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">11.5</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NO TREND</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-1.1)</span></td>
+            </tr></tbody>
+            </table>
+        </div>
+        <div style="flex:1 1 380px;min-width:0;">
+            <h3 style="font-size:15px;font-weight:600;margin:0 0 6px;">ADR5 vs ADR14</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead>
+                    <tr style="border-bottom:2px solid #e9e9e6;color:#6b6a65;font-weight:500;">
+                        <th style="padding:6px 8px;text-align:left;">#</th>
+                        <th style="padding:6px 8px;text-align:left;">Asset</th>
+                        <th style="padding:6px 8px;text-align:right;">Value</th>
+                        <th style="padding:6px 8px;text-align:center;">State</th>
+                        <th style="padding:6px 8px;text-align:left;">vs 3 sessions ago</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">1</td>
+                <td style="padding:6px 8px;font-weight:600;">NZDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.07x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#fef9c3;color:#a16207;font-size:12px;font-weight:600;">WARMING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.19)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">2</td>
+                <td style="padding:6px 8px;font-weight:600;">DXY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.06x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#fef9c3;color:#a16207;font-size:12px;font-weight:600;">WARMING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.21)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">3</td>
+                <td style="padding:6px 8px;font-weight:600;">EUR/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.04x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.21)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">4</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/SEK</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.03x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.23)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">5</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CHF</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.90x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#6b6a65;font-weight:600;">&#9644; flat</span> <span style="color:#6b6a65;">(+0.01)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">6</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CAD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.90x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.15)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">7</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/JPY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.88x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-0.25)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">8</td>
+                <td style="padding:6px 8px;font-weight:600;">GBP/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.88x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.14)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">9</td>
+                <td style="padding:6px 8px;font-weight:600;">AUDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.82x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#dbeafe;color:#1e40af;font-size:12px;font-weight:600;">COOLING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#6b6a65;font-weight:600;">&#9644; flat</span> <span style="color:#6b6a65;">(+0.03)</span></td>
+            </tr></tbody>
+            </table>
+        </div>
+        <div style="flex:1 1 380px;min-width:0;">
+            <h3 style="font-size:15px;font-weight:600;margin:0 0 6px;">ADR5 vs ADR20</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead>
+                    <tr style="border-bottom:2px solid #e9e9e6;color:#6b6a65;font-weight:500;">
+                        <th style="padding:6px 8px;text-align:left;">#</th>
+                        <th style="padding:6px 8px;text-align:left;">Asset</th>
+                        <th style="padding:6px 8px;text-align:right;">Value</th>
+                        <th style="padding:6px 8px;text-align:center;">State</th>
+                        <th style="padding:6px 8px;text-align:left;">vs 3 sessions ago</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">1</td>
+                <td style="padding:6px 8px;font-weight:600;">NZDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.13x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#fef9c3;color:#a16207;font-size:12px;font-weight:600;">WARMING</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.28)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">2</td>
+                <td style="padding:6px 8px;font-weight:600;">DXY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">1.02x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.24)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">3</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CHF</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.98x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.12)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">4</td>
+                <td style="padding:6px 8px;font-weight:600;">EUR/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.98x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.25)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">5</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/SEK</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.98x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.20)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">6</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/JPY</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.93x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#1e40af;font-weight:600;">&#9660; falling</span> <span style="color:#6b6a65;">(-0.16)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">7</td>
+                <td style="padding:6px 8px;font-weight:600;">GBP/USD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.91x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.20)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">8</td>
+                <td style="padding:6px 8px;font-weight:600;">USD/CAD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.87x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.13)</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e9e9e6;">
+                <td style="padding:6px 8px;color:#6b6a65;font-family:monospace;">9</td>
+                <td style="padding:6px 8px;font-weight:600;">AUDUSD</td>
+                <td style="padding:6px 8px;text-align:right;font-family:monospace;">0.86x</td>
+                <td style="padding:6px 8px;text-align:center;"><span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">NORMAL</span></td>
+                <td style="padding:6px 8px;white-space:nowrap;"><span style="color:#9a3412;font-weight:600;">&#9650; rising</span> <span style="color:#6b6a65;">(+0.09)</span></td>
+            </tr></tbody>
+            </table>
+        </div></div>
+        <div style="font-size:11px;color:#8a8985;margin-top:14px;">Ranked highest to lowest. Rising / falling compares the latest completed session with 3 sessions earlier; a move smaller than 1.0 ADX points or 0.03 ratio points counts as flat. ADR ratios compare each asset with its own history, so rank on ratio says which asset is heating up relative to itself, not which one moves the most in pips. ADX measures trend strength, not direction. Context only.</div>
+    </div>
+    <div id="tab-DXY" class="tab-section" style="display:none;">
         <h2 style="font-size:20px;font-weight:600;margin-bottom:12px;border-bottom:1px solid #e9e9e6;padding-bottom:8px;">
             DXY
         </h2>
@@ -56,6 +299,19 @@
                 </tr>
             </thead>
             <tbody>
+        <tr style="border-bottom:1px solid #e9e9e6;">
+            <td style="padding:8px;font-family:monospace;">2026-11-02</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">101.760</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">101.820</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">101.240</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">101.420</td>
+            <td style="padding:8px;text-align:center;">
+                <span style="padding:2px 8px;border-radius:12px;background-color:#ffeef0;color:#cb2431;font-size:12px;font-weight:600;">
+                    BEAR
+                </span>
+            </td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">57 pips / 570 points</td>
+        </tr>
         <tr style="border-bottom:1px solid #e9e9e6;">
             <td style="padding:8px;font-family:monospace;">2026-10-30</td>
             <td style="padding:8px;text-align:right;font-family:monospace;">101.710</td>
@@ -120,19 +376,6 @@
                 </span>
             </td>
             <td style="padding:8px;text-align:right;font-family:monospace;">46 pips / 460 points</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e9e9e6;">
-            <td style="padding:8px;font-family:monospace;">2026-10-23</td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">101.370</td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">101.670</td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">101.290</td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">101.620</td>
-            <td style="padding:8px;text-align:center;">
-                <span style="padding:2px 8px;border-radius:12px;background-color:#e2f5e9;color:#0f7b4e;font-size:12px;font-weight:600;">
-                    BULL
-                </span>
-            </td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">37 pips / 370 points</td>
         </tr></tbody>
         </table>
 
@@ -193,7 +436,7 @@
 
         <h3 style="font-size:15px;font-weight:600;margin:0 0 8px;">Weekly Range (Last 3 Months)</h3>
         <div style="margin-bottom:12px;"><svg width="760" height="140" viewBox="0 0 760 140" style="max-width:100%;height:auto;">
-        <polyline points="24.0,74.2 83.3,116.0 142.7,66.7 202.0,106.8 261.3,53.3 320.7,80.9 380.0,46.6 439.3,65.0 498.7,39.1 558.0,27.3 617.3,24.0 676.7,100.9 736.0,46.6" fill="none" stroke="#d4a017" stroke-width="2" /><circle cx="24.0" cy="74.2" r="3" fill="#d4a017" /><circle cx="83.3" cy="116.0" r="3" fill="#d4a017" /><circle cx="142.7" cy="66.7" r="3" fill="#d4a017" /><circle cx="202.0" cy="106.8" r="3" fill="#d4a017" /><circle cx="261.3" cy="53.3" r="3" fill="#d4a017" /><circle cx="320.7" cy="80.9" r="3" fill="#d4a017" /><circle cx="380.0" cy="46.6" r="3" fill="#d4a017" /><circle cx="439.3" cy="65.0" r="3" fill="#d4a017" /><circle cx="498.7" cy="39.1" r="3" fill="#d4a017" /><circle cx="558.0" cy="27.3" r="3" fill="#d4a017" /><circle cx="617.3" cy="24.0" r="3" fill="#d4a017" /><circle cx="676.7" cy="100.9" r="3" fill="#d4a017" /><circle cx="736.0" cy="46.6" r="3" fill="#d4a017" /><text x="24.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/07</text><text x="83.3" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/14</text><text x="142.7" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/21</text><text x="202.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/28</text><text x="261.3" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/04</text><text x="320.7" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/11</text><text x="380.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/18</text><text x="439.3" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/25</text><text x="498.7" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/02</text><text x="558.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/09</text><text x="617.3" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/16</text><text x="676.7" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/23</text><text x="736.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/30</text></svg></div>
+        <polyline points="24.0,95.5 78.8,116.0 133.5,73.3 188.3,108.0 243.1,61.7 297.8,85.6 352.6,55.9 407.4,71.8 462.2,49.4 516.9,39.2 571.7,36.3 626.5,103.0 681.2,55.9 736.0,24.0" fill="none" stroke="#d4a017" stroke-width="2" /><circle cx="24.0" cy="95.5" r="3" fill="#d4a017" /><circle cx="78.8" cy="116.0" r="3" fill="#d4a017" /><circle cx="133.5" cy="73.3" r="3" fill="#d4a017" /><circle cx="188.3" cy="108.0" r="3" fill="#d4a017" /><circle cx="243.1" cy="61.7" r="3" fill="#d4a017" /><circle cx="297.8" cy="85.6" r="3" fill="#d4a017" /><circle cx="352.6" cy="55.9" r="3" fill="#d4a017" /><circle cx="407.4" cy="71.8" r="3" fill="#d4a017" /><circle cx="462.2" cy="49.4" r="3" fill="#d4a017" /><circle cx="516.9" cy="39.2" r="3" fill="#d4a017" /><circle cx="571.7" cy="36.3" r="3" fill="#d4a017" /><circle cx="626.5" cy="103.0" r="3" fill="#d4a017" /><circle cx="681.2" cy="55.9" r="3" fill="#d4a017" /><circle cx="736.0" cy="24.0" r="3" fill="#d4a017" /><text x="24.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/07</text><text x="78.8" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/14</text><text x="133.5" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/21</text><text x="188.3" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">08/28</text><text x="243.1" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/04</text><text x="297.8" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/11</text><text x="352.6" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/18</text><text x="407.4" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">09/25</text><text x="462.2" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/02</text><text x="516.9" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/09</text><text x="571.7" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/16</text><text x="626.5" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/23</text><text x="681.2" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">10/30</text><text x="736.0" y="136" font-size="10" text-anchor="middle" fill="#6b6a65">11/06</text></svg></div>
         <table style="width:100%;border-collapse:collapse;font-size:14px;">
             <thead>
                 <tr style="border-bottom:2px solid #e9e9e6;color:#6b6a65;font-weight:500;">
@@ -203,6 +446,15 @@
                 </tr>
             </thead>
             <tbody>
+        <tr style="border-bottom:1px solid #e9e9e6;">
+            <td style="padding:8px;font-family:monospace;">2026-11-06</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">0.5800</td>
+            <td style="padding:8px;text-align:center;">
+                <span style="padding:2px 8px;border-radius:12px;background-color:#ffeef0;color:#cb2431;font-size:12px;font-weight:600;">
+                    BEARISH
+                </span>
+            </td>
+        </tr>
         <tr style="border-bottom:1px solid #e9e9e6;">
             <td style="padding:8px;font-family:monospace;">2026-10-30</td>
             <td style="padding:8px;text-align:right;font-family:monospace;">0.4920</td>
@@ -270,8 +522,8 @@
             <td style="padding:8px;font-family:monospace;">2026-09-11</td>
             <td style="padding:8px;text-align:right;font-family:monospace;">0.4100</td>
             <td style="padding:8px;text-align:center;">
-                <span style="padding:2px 8px;border-radius:12px;background-color:#ffeef0;color:#cb2431;font-size:12px;font-weight:600;">
-                    BEARISH
+                <span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">
+                    NEUTRAL
                 </span>
             </td>
         </tr>
@@ -313,10 +565,10 @@
         </tr>
         <tr style="border-bottom:1px solid #e9e9e6;">
             <td style="padding:8px;font-family:monospace;">2026-08-07</td>
-            <td style="padding:8px;text-align:right;font-family:monospace;">0.4260</td>
+            <td style="padding:8px;text-align:right;font-family:monospace;">0.3825</td>
             <td style="padding:8px;text-align:center;">
-                <span style="padding:2px 8px;border-radius:12px;background-color:#f1f1ef;color:#6b6a65;font-size:12px;font-weight:600;">
-                    NEUTRAL
+                <span style="padding:2px 8px;border-radius:12px;background-color:#ffeef0;color:#cb2431;font-size:12px;font-weight:600;">
+                    BEARISH
                 </span>
             </td>
         </tr></tbody>
